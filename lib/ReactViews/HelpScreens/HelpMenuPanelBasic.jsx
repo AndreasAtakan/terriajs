@@ -94,15 +94,6 @@ const HelpMenuPanelBasic = createReactClass({
                   {t("helpMenu.helpMenuSatelliteGuideTitle")}
                 </button>
               </li>
-              <li className={Styles.listItem}>
-                <a
-                  target="_blank"
-                  href="./help/help.html"
-                  className={Styles.btnViewer}
-                >
-                  {t("helpMenu.helpMenuMoreHelpTitle")}
-                </a>
-              </li>
             </ul>
           </div>
         </If>

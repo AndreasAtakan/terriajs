@@ -1,17 +1,14 @@
 {
   "name": "terriajs",
-  "version": "7.11.16",
-  "description": "Geospatial data visualization platform.",
+  "version": "",
+  "description": "",
   "license": "Apache-2.0",
   "engines": {
     "node": ">= 8.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/TerriaJS/terriajs"
-  },
-  "config": {
-    "docRepo": "git@github.com:TerriaJS/Documentation.git"
+    "url": "http://github.com/AndreasAtakan/terriajs"
   },
   "dependencies": {
     "@babel/core": "^7.3.3",
@@ -101,7 +98,6 @@
     "fs-extra": "^7.0.1",
     "generate-terriajs-schema": "^1.5.0",
     "glob-all": "^3.0.1",
-    "husky": "^2.2.0",
     "jasmine-core": "^2.9.1",
     "jsdoc": "^3.5.0",
     "karma": "^4.0.0",
@@ -129,7 +125,6 @@
   },
   "scripts": {
     "prepublish": "gulp post-npm-install",
-    "postpublish": "bash -c \"if [ -z \"$GITHUB_ACTION\" ]; then git tag -a ${npm_package_version} -m \"${npm_package_version}\" && git push origin ${npm_package_version}; fi \"",
     "postinstall": "gulp post-npm-install",
     "gulp": "gulp",
     "make-schema": "gulp make-schema",
@@ -139,10 +134,5 @@
     "prettier": "prettier --write \"**/*\"",
     "pretty-quick": "pretty-quick",
     "prettier-check": "prettier --check \"**/*\""
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   }
 }

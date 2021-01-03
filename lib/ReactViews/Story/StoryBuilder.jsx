@@ -356,7 +356,7 @@ const StoryBuilder = createReactClass({
     });
     return (
       <div className={className}>
-        {this.state.showVideoGuide && this.renderVideoGuide()}
+        {/* this.state.showVideoGuide */ false && this.renderVideoGuide()}
         <ul className={Styles.title}>
           <li>{t("story.storyEditor")}</li>
           <li>
@@ -372,7 +372,7 @@ const StoryBuilder = createReactClass({
           </li>
         </ul>
         <div className={Styles.header}>
-          {!hasStories && this.renderIntro()}
+          {/* !hasStories */ false && this.renderIntro()}
           <div className={Styles.actions}>
             {hasStories && (
               <div className={Styles.storiesActions}>

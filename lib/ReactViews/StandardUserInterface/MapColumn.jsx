@@ -6,10 +6,10 @@ import "mutationobserver-shim";
 import TerriaViewerWrapper from "../Map/TerriaViewerWrapper.jsx";
 import LocationBar from "../Map/Legend/LocationBar.jsx";
 import DistanceLegend from "../Map/Legend/DistanceLegend.jsx";
-import FeedbackButton from "../Feedback/FeedbackButton.jsx";
+// import FeedbackButton from "../Feedback/FeedbackButton.jsx";
 import ObserveModelMixin from "../ObserveModelMixin";
 import BottomDock from "../BottomDock/BottomDock.jsx";
-import defined from "terriajs-cesium/Source/Core/defined";
+// import defined from "terriajs-cesium/Source/Core/defined";
 import FeatureDetection from "terriajs-cesium/Source/Core/FeatureDetection";
 import classNames from "classnames";
 import { withTranslation } from "react-i18next";
@@ -82,7 +82,7 @@ const MapColumn = createReactClass({
   },
 
   render() {
-    const { t } = this.props;
+    // const { t } = this.props;
     // TODO: remove? see: https://bugs.chromium.org/p/chromium/issues/detail?id=1001663
     const isAboveChrome75 =
       chromeVersion && chromeVersion[0] && Number(chromeVersion[0]) > 75;
@@ -116,26 +116,6 @@ const MapColumn = createReactClass({
                   mouseCoords={this.props.viewState.mouseCoords}
                 />
                 <DistanceLegend terria={this.props.terria} />
-              </div>
-            </If>
-            <If
-              condition={
-                !this.props.customFeedbacks.length &&
-                this.props.terria.configParameters.feedbackUrl &&
-                !this.props.viewState.hideMapUi()
-              }
-            >
-              <div
-                className={classNames(Styles.feedbackButtonWrapper, {
-                  [Styles.withTimeSeriesControls]: defined(
-                    this.props.terria.timeSeriesStack.topLayer
-                  )
-                })}
-              >
-                <FeedbackButton
-                  viewState={this.props.viewState}
-                  btnText={t("feedback.feedbackBtnText")}
-                />
               </div>
             </If>
 
